@@ -1,4 +1,5 @@
 import mma8451
+import time
 
 # Potential range values
 MMA8451_RANGE_8_G = 0b10    # +/- 8g
@@ -10,14 +11,13 @@ accel = mma8451.MMA8451()
 
 # Check for MMA 8451
 ismma = accel.check8451()
-if ismma = True:
+if ismma == True:
     print "MMA 8451 Found!"
 else:
     print "No MMA Found. What is this?!"
 
 # Set up mma, default range is 2Gs
 accel.setup()
-
 # Can declare a different range with
 accel.setup(MMA8451_RANGE_8_G)
 
@@ -27,3 +27,4 @@ for i in range(10):
     print "(" + str(round(ax,1)) + ", " + str(round(ay,1)) + ", " + str(round(az,1)) + ")" 
     orientation = accel.readOrientation()
     print orientation
+    time.sleep(0.1)
