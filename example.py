@@ -1,4 +1,4 @@
-import mma8451
+import MMA8451
 import time
 
 # Potential range values
